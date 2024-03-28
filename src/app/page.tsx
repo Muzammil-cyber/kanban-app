@@ -1,16 +1,18 @@
 "use client";
-import BoardTasks from "@/components/BoardTasks";
-import Sidebar from "@/components/Sidebar";
-
+import Sidebar from "./components/Sidebar";
+import BoardTasks from "./components/BoardTasks";
 // Firestore methods: collection and getDocs for document reference, addDoc for adding a document
 import { collection, getDocs, addDoc } from "firebase/firestore";
 // Connect our app to Firestore
-import { db } from "@/utils/firebaseConfig";
+import { db } from "./utils/firebaseConfig";
 import { useEffect, useState } from "react";
 // Import getSession from next-auth library to retrieve signed-in user details
 import { getSession } from "next-auth/react";
 // Import data from data.json, used to initialize the Firestore database for new users
-import { data } from "@/utils/data.js";
+import { data } from "./utils/data";
+import AddAndEditBoardModal from "./components/AddAndEditBoardModal";
+import AddAndEditTaskModal from "./components/AddAndEditTaskModal";
+import DeleteBoardOrTaskModal from "./components/DeleteBoardAndTaskModal";
 
 export default function Home() {
   // Manage user details in this state. Key index in TypeScript ensures type safety.
@@ -61,6 +63,9 @@ export default function Home() {
     <main className="flex h-full">
       <Sidebar />
       <BoardTasks />
+      <AddAndEditBoardModal />
+      <AddAndEditTaskModal/>
+      <DeleteBoardOrTaskModal/>
     </main>
   );
 }

@@ -1,8 +1,7 @@
-//used to generate new id
 export const id = () => Math.random().toString(36).substring(2, 10);
 
 export const data = {
-  boards: [
+  "boards": [
     {
       id: id(),
       name: "Roadmap",
@@ -14,26 +13,27 @@ export const data = {
             {
               id: id(),
               title: "Launch version one",
-              status: "Now",
+              status: "Now"
             },
             {
               id: id(),
               title: "Review early feedback and plan next steps for roadmap",
-              status: "Now",
-            },
-          ],
+              status: "Now"
+            }
+          ]
         },
         {
           id: id(),
           name: "Next",
-          tasks: [],
+          tasks: []
         },
         {
           id: id(),
           name: "Later",
-          tasks: [],
-        },
-      ],
-    },
-  ],
-};
+          tasks: []
+        }
+      ]
+    }
+  ]
+}
+
